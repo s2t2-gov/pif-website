@@ -1,8 +1,14 @@
+require 'active_support/core_ext/hash/keys' # enable Hash#symbolize_keys
+require "pry"
+
 module Pif
   class Joiner
     def self.join_data(site)
       filter_agencies(site)
       consolidate_pif_projects_by_agency(site)
+
+      h = {"abc"=>123}.symbolize_keys
+      puts h
     end
 
     def self.filter_agencies(site)
